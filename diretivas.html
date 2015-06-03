@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Café com Bits - AngularJs e Bootstrap</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="js/angular.js"></script>
+        <!--- referência ao JS da aplicação --->
+        <script src="js/app.js"></script>
+    </head>
+    <!--- Inicia o app(módulo) do Angular JS --->
+    <body ng-app='cafeBits'>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Angular JS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Data Binding</a></li>
+                    <li><a href="modulos.html">Módulos</a></li>
+                    <li><a href="controllers.html">Controllers</a></li>
+                    <li class="active"><a href="diretivas.html">Diretivas</a></li>
+                    <li><a href="dependencias.html">Injeção de Dependências</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <diretiva-produto></diretiva-produto>
+            </div>
+            <div class="row">
+                <div style="width:100%; height: 50px;">&nbsp;</div>
+                <div class="col-sm-12">
+                    <h2>Diretivas</h2>
+                    <p>produto.html</p>
+                    <div class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-sm-3&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;Nome do Produto&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
+                &lt;p&gt;Preço: &lt;/p&gt;
+                &lt;p&gt;Descrição: &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <p>&nbsp;</p>
+                    <p>app.js</p>
+                    <div class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+//Definindo a Diretiva
+app.directive('diretivaProduto', function(){ //A letra maiúscula tem um motivo
+    return {
+        restrict: 'E', //Será criada como elemento HTML
+        templateUrl: 'produto.html', //Arquivo html comum
+        controller: function(){ //Define a controller da diretiva
+            var produto = {
+                nome:'Autolac',
+                preço: '1200,00',
+                descrição: 'Excelente para Laboratórios de Análises Clínicas.'
+            };
+        },
+        controllerAs: 'ctrl' //Define um alias para a controller
+    };
+});
+                            </code>
+                        </pre>
+                    </div>
+                    <p>&nbsp;</p>
+                    <p>diretivas.html</p>
+                    <div class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+...
+    &lt;diretiva-produto&gt;&lt;/diretiva-produto&gt;
+...
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" id="panel-title">Observação<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+                        </div>
+                        <div class="panel-body">
+                            Desta forma pode-se criar um html legível, por exemplo:
+                            <br>
+                            <code>
+&lt;titulo-produto&gt;&lt;/titulo-produto&gt;<br>
+&lt;descricao-produto&gt;&lt;/descricao-produto&gt;<br>
+&lt;opcoes-produto&gt;&lt;/opcoes-produto&gt;<br>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

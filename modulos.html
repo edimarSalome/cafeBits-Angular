@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Café com Bits - AngularJs e Bootstrap</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="js/angular.js"></script>
+        <!--- referência ao JS da aplicação --->
+        <script src="js/app.js"></script>
+    </head>
+    <!--- Inicia o app(módulo) do Angular JS --->
+    <body ng-app='cafeBits'>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Angular JS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Data Binding</a></li>
+                    <li class="active"><a href="modulos.html">Módulos</a></li>
+                    <li><a href="controllers.html">Controllers</a></li>
+                    <li><a href="diretivas.html">Diretivas</a></li>
+                    <li><a href="dependencias.html">Injeção de Dependências</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Módulos</h2>
+                    <p>app.js</p>
+                    <div class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+// Declaração do módulo
+var app = angular.module('cafeBits', []);
+                            </code>
+                        </pre>
+                    </div>
+                    <p>&nbsp;</p>
+                    <p>modulos.html</p>
+                    <div class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+&lt;!--- referência ao JS da aplicação ---&gt;
+&lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
+
+...
+
+&lt;!--- Inicia o app(módulo) do Angular JS ---&gt;
+&lt;body ng-app='cafeBits'&gt;
+...
+&lt;/body&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" id="panel-title">Observação<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+                        </div>
+                        <div class="panel-body">
+                            É possível informar dependência entre os módulos, de forma que um conjunto de módulos se unem para formar uma aplicação e quando necessário, 
+                            pode ser substituído ou atualizado com baixo impacto.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

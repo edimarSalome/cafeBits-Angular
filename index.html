@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Café com Bits - AngularJs e Bootstrap</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="js/angular.js"></script>
+    </head>
+    <!--- Inicia o app(módulo) do Angular JS --->
+    <body ng-app>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Angular JS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Data Binding</a></li>
+                    <li><a href="modulos.html">Módulos</a></li>
+                    <li><a href="controllers.html">Controllers</a></li>
+                    <li><a href="diretivas.html">Diretivas</a></li>
+                    <li><a href="dependencias.html">Injeção de Dependências</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <!--- Expressão do Angular --->
+                    <h2>{{"Hello " + quem}}</h2>
+                    <!--- Ng Model declara o modelo --->
+                    <select ng-model="quem" class="form-control">
+                        <option>World !</option>
+                        <option>Lifesys !</option>
+                        <option>Calouros !</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div style="width:100%; height: 50px;">&nbsp;</div>
+                <div class="col-sm-12">
+                    <h2>Data Binding</h2>
+                    <p>Index.html</p>
+                    <div class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+                                <span>
+&lt;!--- Inicia o app(módulo) do Angular JS ---&gt;
+&lt;body ng-app&gt;
+...
+&lt;/body&gt;
+
+
+&lt;!--- Ng Model declara o modelo ---&gt;
+&lt;select ng-model=&quot;quem&quot; class=&quot;form-control&quot;&gt;
+&lt;option&gt;World !&lt;/option&gt;
+&lt;option&gt;Lifesys !&lt;/option&gt;
+&lt;option&gt;Calouros !&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!--- Expressão do Angular ---&gt;
+&lt;h2&gt;{{&quot;Hello &quot; + quem}}&lt;/h2&gt;
+                                </span>
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
